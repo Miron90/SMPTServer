@@ -45,15 +45,26 @@ namespace SerwerAPI.Controllers
          }*/
         public ActionResult<LocationDto> CreateLocation([FromBody]  LocationDto locationDto)
         {
-            Location location = new()
-            {
-                name = locationDto.name,
-                latitude = locationDto.latitude,
-                longtitude = locationDto.longtitude
-            };
+            Location location =_localizationRepo.GetLocalization(locationDto.name);
+            bool remove = false;
 
-            _localizationRepo.CreateLocalization(location);
-            return Ok("utworzono");
+            if(location == null)
+            {
+                location = new()
+                {
+                    name = locationDto.name,
+                    latitude = locationDto.latitude,
+                    longtitude = locationDto.longtitude
+                };
+            }
+            else
+            {
+                location.latitude = locationDto.latitude;
+                location.longtitude = locationDto.longtitude;
+                remove = true;
+            }
+            _localizationRepo.SaveLocalization(location,remove);
+            return Ok("zedytowano");
         }
 
         // PUT api/<MapController>/5
