@@ -1,0 +1,11 @@
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\SerwerAPI.exe
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\appsettings.Development.json
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\appsettings.json
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\SerwerAPI.dll
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\SerwerAPI.deps.json
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\SerwerAPI.runtimeconfig.json
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\SerwerAPI.pdb
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
