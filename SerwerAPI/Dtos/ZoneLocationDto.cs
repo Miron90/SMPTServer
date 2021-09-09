@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SerwerAPI
+namespace SerwerAPI.Dtos
 {
-    public record LocationDto
+    public class ZoneLocationDto
     {
+        public double longitude { get; init; }
         public double latitude { get; init; }
-
-        public double longtitude { get; init; }
-
-        public string name { get; init; }
+        public int shapeId { get; init; }
     }
 }
