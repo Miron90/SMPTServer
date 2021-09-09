@@ -23,6 +23,7 @@
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
       "environmentVariables": {
+        "NodeJS": "C:\\Program Files\\nodejs",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://0.0.0.0:5001"

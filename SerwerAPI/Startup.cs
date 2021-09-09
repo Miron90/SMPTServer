@@ -1,12 +1,17 @@
+using Jering.Javascript.NodeJS;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
+using SerwerAPI.Data;
 using SerwerAPI.Models;
+using SerwerAPI.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +29,20 @@ namespace SerwerAPI
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ILocationRepository, InMemLocationRepository>();
+            services.AddNodeServices(options =>
+            {
+                options.ProjectPath = "C:\\Program Files\\nodejs";
+            });
+
+            services.AddDbContext<DataContext>(x => x.UseSqlite(@"Data Source=C:\APIDatabase\UsersLocation.db"));
+            services.AddAutoMapper(typeof(Startup));
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserLocationRepository, UserLocationRepository>();
+            services.AddScoped<IZoneService, ZoneService>();
+            services.AddScoped<IZoneLocationRepository, ZoneLocationRepository>();
             services.AddSwaggerGen();
             services.AddControllers();
         }
