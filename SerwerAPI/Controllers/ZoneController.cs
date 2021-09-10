@@ -23,6 +23,9 @@ namespace SerwerAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetZonesLocations()
         {
+
+
+
             IEnumerable<ZoneLocationDto> zoneLocations;
             try
             {

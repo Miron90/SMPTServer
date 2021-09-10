@@ -100,3 +100,4 @@ C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Release\netcoreapp5.0\Microsoft.AspNetCore.
 C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Release\netcoreapp5.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Release\netcoreapp5.0\System.Text.Encodings.Web.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Release\netcoreapp5.0\System.Text.Json.dll
+C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Release\netcoreapp5.0\Jint.dll

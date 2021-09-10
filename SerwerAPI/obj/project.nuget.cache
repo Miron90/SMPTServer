@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VF+RRUIKaK5pJ8sWdpxL1TtKJ1tu1hVPN1HuxblpDtxUtPcTPvyW/0UUSKORT1YKPcY9hkL7yeekUWndfpqTEA==",
+  "dgSpecHash": "0zWqrED/a62gKjZWtwQ01hvd3307YCBR0BsWNDz1bEjKw51XEVPK1FKOxeZS0gcis7HkYogc55Sc/otwxogclw==",
   "success": true,
   "projectFilePath": "C:\\SerwerNET\\SerwerAPI\\SerwerAPI\\SerwerAPI.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Praktyka\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\Praktyka\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Praktyka\\.nuget\\packages\\jering.javascript.nodejs\\6.0.1\\jering.javascript.nodejs.6.0.1.nupkg.sha512",
+    "C:\\Users\\Praktyka\\.nuget\\packages\\jint\\2.11.58\\jint.2.11.58.nupkg.sha512",
     "C:\\Users\\Praktyka\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Praktyka\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Praktyka\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

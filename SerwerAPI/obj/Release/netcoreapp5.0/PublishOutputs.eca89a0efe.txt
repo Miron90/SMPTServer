@@ -9,6 +9,7 @@ C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\AutoMapper
 C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\DnsClient.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Jering.Javascript.NodeJS.dll
+C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Jint.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Microsoft.AspNetCore.NodeServices.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Microsoft.AspNetCore.SpaServices.Extensions.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out\Microsoft.Data.SqlClient.dll

@@ -100,3 +100,4 @@ C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Debug\netcoreapp5.0\Microsoft.AspNetCore.Sp
 C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Debug\netcoreapp5.0\System.Text.Encodings.Web.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Debug\netcoreapp5.0\System.Text.Json.dll
 C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Debug\netcoreapp5.0\libman.json
+C:\SerwerNET\SerwerAPI\SerwerAPI\bin\Debug\netcoreapp5.0\Jint.dll
