@@ -2,39 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SerwerAPI.Models;
 
 namespace SerwerAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class UsersLocationContextModelSnapshot : ModelSnapshot
+    [Migration("20210910071131_ThirdMigration")]
+    partial class ThirdMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.9");
-
-            modelBuilder.Entity("SerwerAPI.Models.SignsModel", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<double>("latitude")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("longitude")
-                        .HasColumnType("REAL");
-
-                    b.Property<string>("signCode")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Signs");
-                });
 
             modelBuilder.Entity("SerwerAPI.Models.ZoneLocationModel", b =>
                 {

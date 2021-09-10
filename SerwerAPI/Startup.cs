@@ -12,6 +12,7 @@ using MongoDB.Driver;
 using SerwerAPI.Data;
 using SerwerAPI.Models;
 using SerwerAPI.Services;
+using SerwerAPI.staticMembers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,11 +41,15 @@ namespace SerwerAPI
             services.AddDbContext<DataContext>(x => x.UseSqlite(@"Data Source=C:\APIDatabase\UsersLocation.db"));
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ISignsService, SignsService>();
             services.AddScoped<IUserLocationRepository, UserLocationRepository>();
             services.AddScoped<IZoneService, ZoneService>();
             services.AddScoped<IZoneLocationRepository, ZoneLocationRepository>();
+            services.AddScoped<ISignsRepository, SignsRepository>();
             services.AddSwaggerGen();
             services.AddControllers();
+            JSEngine.runBackgroundTask();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

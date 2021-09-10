@@ -13,5 +13,7 @@ namespace SerwerAPI.Models
         public double longitude { get; init; }
         public double latitude { get; init; }
         public int shapeId { get; init; }
+
+
     }
 }

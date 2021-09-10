@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Https;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -14,26 +15,6 @@ namespace SerwerAPI
     {
         public static void Main(string[] args)
         {
-            /*var configuration = new ConfigurationBuilder()
-            .AddCommandLine(args)
-            .Build();
-
-
-                var hostUrl = configuration["hosturl"];
-                if (string.IsNullOrEmpty(hostUrl))
-                    hostUrl = "http://0.0.0.0:6000";
-
-
-                var host = new WebHostBuilder()
-                    .UseKestrel()
-                    .UseUrls(hostUrl)   // <!-- this 
-                    .UseContentRoot(Directory.GetCurrentDirectory())
-                    .UseIISIntegration()
-                    .UseStartup<Startup>()
-                    .UseConfiguration(configuration)
-                    .Build();
-
-                host.Run();*/
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -43,5 +24,7 @@ namespace SerwerAPI
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+    
+                
     }
 }

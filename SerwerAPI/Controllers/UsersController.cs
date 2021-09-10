@@ -1,4 +1,4 @@
-﻿using Jering.Javascript.NodeJS;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using SerwerAPI.Dtos;
@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Jint;
+using SerwerAPI.staticMembers;
 
 namespace SerwerAPI.Controllers
 {
@@ -15,6 +17,8 @@ namespace SerwerAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+
+
         private readonly IUserService _service;
 
         public UsersController(IUserService service)
@@ -26,15 +30,6 @@ namespace SerwerAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUsersLocations()
         {
-            var services = new ServiceCollection();
-            services.AddNodeJS();
-            ServiceProvider serviceProvider = services.BuildServiceProvider();
-            INodeJSService nodeJSService = serviceProvider.GetRequiredService<INodeJSService>();
-
-            /*string result = await StaticNodeJSService.InvokeFromStringAsync<string>("module.exports = (callback) => {var msd new new ms.Symbol('fgpewrh--mt', {size: 35,quantity: 200, staffComments: 'for reinforcements'.toUpperCase(),additionalInformation: 'added support for JJ'.toUpperCase(),direction: (750 * 360) / 6400,type: 'machine gun'.toUpperCase(),dtg: '30140000ZSEP97', location: '0900000.0E570306.0N'}).asSVG();callback(null, msd);}", args: new[] { "success" });
-
-            Console.WriteLine(result);*/
-
             IEnumerable<UserLocationDto> usersLocations;
             try
             {
@@ -45,9 +40,6 @@ namespace SerwerAPI.Controllers
             }
 
             return Ok(usersLocations);
-            /*var db = new UsersLocationContext();
-            Console.WriteLine(db.UsersLocation.ToList());
-            return db.UsersLocation.ToList();*/
         }
 
 
@@ -64,29 +56,9 @@ namespace SerwerAPI.Controllers
             {
                 return BadRequest(e.ToString());
             }
-            if (added) return Ok();
+            if (added) return Ok("added");
 
             return BadRequest("Could not add the place");
-
-            /*var db = new UsersLocationContext();
-            UsersLocationModel userLocationModel = db.UsersLocation.Where(u => u.name.Equals(locationDto.name)).SingleOrDefault();
-
-            if (userLocationModel == null)
-            {
-                userLocationModel = new();
-
-                userLocationModel.name = locationDto.name;
-                userLocationModel.latitude = locationDto.latitude;
-                userLocationModel.longtitude = locationDto.longtitude;
-                db.Add(userLocationModel);
-            }
-            else
-            {
-                userLocationModel.latitude = locationDto.latitude;
-                userLocationModel.longtitude = locationDto.longtitude;
-            }
-            db.SaveChanges();
-            return Ok("zedytowano");*/
         }
 
     }

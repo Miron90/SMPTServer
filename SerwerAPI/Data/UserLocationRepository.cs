@@ -27,6 +27,7 @@ namespace SerwerAPI.Data
 
         public Task<IEnumerable<UsersLocationModel>> GetUsersLocations()
         {
+            
             return Task.Run(() => _context.UsersLocation.ToList().AsEnumerable());
         }
 
@@ -40,12 +41,14 @@ namespace SerwerAPI.Data
                 userLocationModel.name = userLocation.name;
                 userLocationModel.latitude = userLocation.latitude;
                 userLocationModel.longtitude = userLocation.longitude;
+                userLocationModel.updatedTime = DateTime.Now;
                 _context.Add(userLocationModel);
             }
             else
             {
                 userLocationModel.latitude = userLocation.latitude;
                 userLocationModel.longtitude = userLocation.longitude;
+                userLocationModel.updatedTime = DateTime.Now;
             }
             _context.SaveChanges();
             return Task.Run(() => true);
