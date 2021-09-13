@@ -28,8 +28,8 @@ namespace SerwerAPI.Services
                 usersLocationsModel.Add(new UserLocationDto
                 {
                     name = dto.name,
-                    latitude=dto.latitude,
-                    longitude=dto.longtitude
+                    latitude=Math.Round(dto.latitude,5),
+                    longitude=Math.Round(dto.longtitude,5)
                 });
             }
 

@@ -9,5 +9,6 @@ namespace SerwerAPI.Services
     public interface ISignsService
     {
         Task<IEnumerable<SignsDto>> GetSigns();
+        Task<bool> AddSign(SignUploadDto signDto);
     }
 }

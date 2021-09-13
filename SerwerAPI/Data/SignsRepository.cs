@@ -15,6 +15,13 @@ namespace SerwerAPI.Data
             _context = context;
         }
 
+        public Task<bool> AddSign(SignsModel model)
+        {
+            _context.Signs.Add(model);
+            _context.SaveChanges();
+            return Task.Run(() => true);
+        }
+
         public Task<IEnumerable<SignsModel>> GetSigns()
         {
             return Task.Run(() => _context.Signs.ToList().AsEnumerable());

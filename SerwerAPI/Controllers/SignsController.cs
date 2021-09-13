@@ -21,20 +21,41 @@ namespace SerwerAPI.Controllers
             }
 
 
-            [HttpGet]
-            public async Task<IActionResult> GetSigns()
+        [HttpGet]
+        public async Task<IActionResult> GetSigns()
+        {
+            IEnumerable<SignsDto> signs;
+            try
             {
-                IEnumerable<SignsDto> usersLocations;
-                try
-                {
-                    usersLocations = await _service.GetSigns();
-                }
-                catch (Exception e)
-                {
-                    return BadRequest("" + e);
-                }
-
-                return Ok(usersLocations);
+                signs = await _service.GetSigns();
             }
+            catch (Exception e)
+            {
+                return BadRequest("" + e);
+            }
+
+            return Ok(signs);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UploadSign([FromBody] SignUploadDto signDto)
+        {
+            bool added;
+            try
+            {
+                added = await _service.AddSign(signDto);
+            }
+            catch (Exception e)
+            {
+                return BadRequest("" + e);
+            }
+            if (added) { 
+            return Ok("added");
+            }
+            else
+            {
+                return BadRequest("could not add sign");
+            }
+        }
     }
 }

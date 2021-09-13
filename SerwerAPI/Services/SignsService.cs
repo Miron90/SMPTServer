@@ -20,6 +20,18 @@ namespace SerwerAPI.Services
             _repo = repo;
         }
 
+        public async Task<bool> AddSign(SignUploadDto signDto)
+        {
+            SignsModel model = new()
+            {
+                latitude = signDto.latitude,
+                longitude = signDto.longitude,
+                signCode = signDto.signCode
+            };
+            if (await _repo.AddSign(model)) return true;
+            else return false;
+        }
+
         public async Task<IEnumerable<SignsDto>> GetSigns()
         {
             var signsModel = await _repo.GetSigns();
