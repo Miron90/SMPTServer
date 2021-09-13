@@ -9,5 +9,6 @@ namespace SerwerAPI.Data
     public interface ISignsRepository
     {
         Task<IEnumerable<SignsModel>> GetSigns();
+        Task<bool> AddSign(SignsModel model);
     }
 }

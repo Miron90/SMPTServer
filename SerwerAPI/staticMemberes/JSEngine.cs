@@ -14,7 +14,7 @@ namespace SerwerAPI.staticMembers
         private static DataUtils _dataUtils = new DataUtils();
         static JSEngine()
         {
-            var milysymbol = System.IO.File.ReadAllText("../APIDatabase/milsymbol.js");
+            var milysymbol = System.IO.File.ReadAllText("C:\\APIDatabase\\milsymbol.js");
             engine.Execute(milysymbol);
         }
 
@@ -37,6 +37,7 @@ namespace SerwerAPI.staticMembers
         {
             var startTimeSpan = TimeSpan.Zero;
             var periodTimeSpan = TimeSpan.FromMinutes(1);
+            Console.WriteLine("xdd");
 
             var timer = new System.Threading.Timer((e) =>
             {
