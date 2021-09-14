@@ -35,9 +35,9 @@ jobs:
       configuration: '$(buildConfiguration)'
   - task: CopyFiles@2
     inputs:
-      SourceFolder: '$(build.artifactStagingDirectory)'
+      SourceFolder: '$(build.artifactStagingDirectory)\SerwerAPI\obj\Release\netcoreapp5.0\PubTmp\Out'
       Contents: '**'
-      TargetFolder: '.'
+      TargetFolder: '../release'
 
 
 
