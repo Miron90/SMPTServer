@@ -17,7 +17,7 @@ namespace SerwerAPI.Controllers
 
             public SignsController(ISignsService service)
             {
-                _service = service;
+            _service = service;
             }
 
 
@@ -56,6 +56,21 @@ namespace SerwerAPI.Controllers
             {
                 return BadRequest("could not add sign");
             }
+        }
+        [HttpGet("order")]
+        public async Task<IActionResult> GetSignsOrderedBy()
+        {
+            IEnumerable<SignDataDto> signsDto;
+            try
+            {
+                signsDto = await _service.GetSignsOrderedBy();
+            }
+            catch (Exception e)
+            {
+                return BadRequest("" + e);
+            }
+
+            return Ok(signsDto);
         }
     }
 }

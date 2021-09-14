@@ -10,5 +10,8 @@ namespace SerwerAPI.Data
     {
         Task<IEnumerable<SignsModel>> GetSigns();
         Task<bool> AddSign(SignsModel model);
+        SignsDataModel GetSignByID(string id);
+        void AddSignToSignsData(SignsDataModel model);
+        Task<IEnumerable<SignsDataModel>> GetSignsOrderedBy();
     }
 }
