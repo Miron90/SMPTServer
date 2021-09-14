@@ -17,6 +17,7 @@ namespace SerwerAPI.Models
         public DbSet<ZoneLocationModel> ZoneLocation { get; set; }
         public DbSet<SignsModel> Signs { get; set; }
         public DbSet<SignsDataModel> SignsData { get; set; }
+        public DbSet<OldUsersLocationModel> OldUsersData { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
