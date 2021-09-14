@@ -15,7 +15,7 @@ namespace SerwerAPI.Controllers
     {
         public TileController()
         { }
-     
+
         [HttpGet("{zoom}/{x}/{y}")]
         public IActionResult Get(int zoom, int x, int y)
         {
@@ -24,11 +24,12 @@ namespace SerwerAPI.Controllers
                 var filePath = "C:\\\\APIDatabase\\warsaw\\4uMaps" + "\\" + zoom + "\\" + x + "\\" + y + ".png";
                 Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.         
                 return File(b, "image/png");
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 return NoContent();
             }
-            
+
         }
     }
 }

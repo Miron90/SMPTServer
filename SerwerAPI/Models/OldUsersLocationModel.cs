@@ -12,6 +12,6 @@ namespace SerwerAPI
         public double longtitude { get; set; }
         public string name { get; set; }
 
-        public DateTime lastUpdatedTime { get;set; }
+        public DateTime lastUpdatedTime { get; set; }
     }
 }

@@ -12,13 +12,13 @@ namespace SerwerAPI.Controllers
     [ApiController]
     public class SignsController : Controller
     {
-        
-            private readonly ISignsService _service;
 
-            public SignsController(ISignsService service)
-            {
+        private readonly ISignsService _service;
+
+        public SignsController(ISignsService service)
+        {
             _service = service;
-            }
+        }
 
 
         [HttpGet]
@@ -49,8 +49,9 @@ namespace SerwerAPI.Controllers
             {
                 return BadRequest("" + e);
             }
-            if (added) { 
-            return Ok("added");
+            if (added)
+            {
+                return Ok("added");
             }
             else
             {

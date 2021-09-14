@@ -10,7 +10,7 @@ namespace SerwerAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ZoneController: ControllerBase
+    public class ZoneController : ControllerBase
     {
         private readonly IZoneService _service;
 

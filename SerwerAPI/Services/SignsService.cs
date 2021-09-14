@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SerwerAPI.Services
 {
-    public class SignsService: ISignsService
+    public class SignsService : ISignsService
     {
         private readonly ISignsRepository _repo;
         private readonly IJSEngine _engine;
@@ -26,8 +26,8 @@ namespace SerwerAPI.Services
         {
             SignsModel model = new()
             {
-                latitude = Math.Round(signDto.latitude,5),
-                longitude = Math.Round(signDto.longitude,5),
+                latitude = Math.Round(signDto.latitude, 5),
+                longitude = Math.Round(signDto.longitude, 5),
                 signCode = signDto.signCode
             };
             if (await _repo.AddSign(model)) return true;
@@ -51,7 +51,7 @@ namespace SerwerAPI.Services
                         signCode = model.signCode,
                         SVGCode = svg,
                         count = 1
-                    }) ; 
+                    });
                 }
                 else
                 {
@@ -61,7 +61,7 @@ namespace SerwerAPI.Services
                 {
                     signSVG = svg,
                     signId = model.id,
-                    signCode= model.signCode,
+                    signCode = model.signCode,
                     latitude = model.latitude,
                     longitude = model.longitude
                 });
@@ -80,8 +80,8 @@ namespace SerwerAPI.Services
                 signsDto.Add(new SignDataDto
                 {
                     signSVG = model.SVGCode,
-                    signCode=model.signCode,
-                    count=model.count
+                    signCode = model.signCode,
+                    count = model.count
                 });
             }
             return signsDto;

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace SerwerAPI.Helpers
 {
-    public class JSEngine :IJSEngine
+    public class JSEngine : IJSEngine
     {
         Engine engine = new Engine();
-        
+
         public JSEngine()
         {
             var milysymbol = System.IO.File.ReadAllText("C:\\APIDatabase\\milsymbol.js");
@@ -31,6 +31,6 @@ namespace SerwerAPI.Helpers
                 + "}).asSVG();");
             return result;
         }
-       
+
     }
 }

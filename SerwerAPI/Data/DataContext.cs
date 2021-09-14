@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace SerwerAPI.Models
 {
-    public class DataContext: DbContext
+    public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options) {
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        {
         }
         public DataContext() { }
 

@@ -23,13 +23,13 @@ namespace SerwerAPI.Services
             var usersLocations = await _repo.GetUsersLocations();
 
             var usersLocationsModel = new List<UserLocationDto>();
-            foreach(UsersLocationModel dto in usersLocations)
+            foreach (UsersLocationModel dto in usersLocations)
             {
                 usersLocationsModel.Add(new UserLocationDto
                 {
                     name = dto.name,
-                    latitude=Math.Round(dto.latitude,5),
-                    longitude=Math.Round(dto.longtitude,5)
+                    latitude = Math.Round(dto.latitude, 5),
+                    longitude = Math.Round(dto.longtitude, 5)
                 });
             }
 

@@ -19,10 +19,11 @@ namespace SerwerAPI.Data
         {
             _context.Signs.Add(model);
             var signsData = _context.SignsData.Where(e => e.signCode == model.signCode).SingleOrDefault();
-            if (signsData != null) { 
-            signsData.count++;
-            _context.SignsData.Update(signsData);
-        }
+            if (signsData != null)
+            {
+                signsData.count++;
+                _context.SignsData.Update(signsData);
+            }
             _context.SaveChanges();
             return Task.Run(() => true);
         }
@@ -45,7 +46,7 @@ namespace SerwerAPI.Data
 
         public Task<IEnumerable<SignsDataModel>> GetSignsOrderedBy()
         {
-            return Task.Run(() => _context.SignsData.OrderByDescending(e=>e.count).ToList().AsEnumerable());
+            return Task.Run(() => _context.SignsData.OrderByDescending(e => e.count).ToList().AsEnumerable());
         }
     }
 }

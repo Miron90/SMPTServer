@@ -27,7 +27,7 @@ namespace SerwerAPI.Data
 
         public Task<IEnumerable<UsersLocationModel>> GetUsersLocations()
         {
-            
+
             return Task.Run(() => _context.UsersLocation.ToList().AsEnumerable());
         }
 

@@ -11,6 +11,6 @@ namespace SerwerAPI
         [Key]
         public string name { get; set; }
 
-        public DateTime updatedTime { get;set; }
+        public DateTime updatedTime { get; set; }
     }
 }

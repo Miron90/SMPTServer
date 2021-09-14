@@ -33,9 +33,10 @@ namespace SerwerAPI.Controllers
             try
             {
                 usersLocations = await _service.GetUsersLocations();
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
-                return BadRequest(""+e);
+                return BadRequest("" + e);
             }
 
             return Ok(usersLocations);
@@ -51,7 +52,8 @@ namespace SerwerAPI.Controllers
             try
             {
                 added = await _service.UpdateUserLocation(userLocationDto);
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 return BadRequest(e.ToString());
             }

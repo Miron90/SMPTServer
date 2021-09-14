@@ -24,7 +24,7 @@ namespace SerwerAPI
                 {
                     webBuilder.UseStartup<Startup>();
                 });
-    
-                
+
+
     }
 }

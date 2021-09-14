@@ -16,7 +16,7 @@ namespace SerwerAPI.Data
         }
         public Task<IEnumerable<ZoneLocationModel>> GetZonesLocations()
         {
-            return Task.Run(() => _context.ZoneLocation.OrderBy(zone=>zone.id).OrderBy(zone => zone.shapeId).ToList().AsEnumerable());
+            return Task.Run(() => _context.ZoneLocation.OrderBy(zone => zone.id).OrderBy(zone => zone.shapeId).ToList().AsEnumerable());
             throw new NotImplementedException();
         }
     }
