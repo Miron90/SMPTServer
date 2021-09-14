@@ -33,11 +33,6 @@ jobs:
     inputs:
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
-  - task: CopyFiles@2
-    inputs:
-      SourceFolder: '$(Path)'
-      Contents: '**'
-      TargetFolder: '$(DestPath)'
 
 
 
