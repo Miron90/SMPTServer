@@ -5,22 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SerwerAPI.staticMembers
+namespace SerwerAPI.Helpers
 {
-    public static class JSEngine
-{
-
-        static Engine engine = new Engine();
-        private static DataUtils _dataUtils = new DataUtils();
-        static JSEngine()
+    public class JSEngine :IJSEngine
+    {
+        Engine engine = new Engine();
+        
+        public JSEngine()
         {
             var milysymbol = System.IO.File.ReadAllText("C:\\APIDatabase\\milsymbol.js");
             engine.Execute(milysymbol);
         }
 
-        public static Engine runEngine(string code)
+        public Engine runEngine(string code)
         {
-            var result = engine.Execute("new ms.Symbol(\""+code+"\", {"
+            var result = engine.Execute("new ms.Symbol(\"" + code + "\", {"
                 + "size: 60,"
                 //+ "quantity: 200,"
                 //+ "staffComments: \"for reinforcements\".toUpperCase(),"
@@ -32,17 +31,6 @@ namespace SerwerAPI.staticMembers
                 + "}).asSVG();");
             return result;
         }
-
-        public static void runBackgroundTask()
-        {
-            var startTimeSpan = TimeSpan.Zero;
-            var periodTimeSpan = TimeSpan.FromMinutes(1);
-            Console.WriteLine("xdd");
-
-            var timer = new System.Threading.Timer((e) =>
-            {
-                _dataUtils.checkOldRecord();
-            }, null, startTimeSpan, periodTimeSpan);
-        }
+       
     }
 }
