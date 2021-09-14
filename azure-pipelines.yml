@@ -23,7 +23,7 @@ jobs:
   - task: VSBuild@1
     inputs:
       solution: 
-      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="."'
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
   - task: gitversion/execute@0
