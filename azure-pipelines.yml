@@ -23,7 +23,7 @@ jobs:
   - task: VSBuild@1
     inputs:
       solution: 
-      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="."'
+      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
   - task: gitversion/execute@0
@@ -33,6 +33,11 @@ jobs:
     inputs:
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(build.artifactStagingDirectory)'
+      Contents: '**'
+      TargetFolder: '.'
 
 
 
