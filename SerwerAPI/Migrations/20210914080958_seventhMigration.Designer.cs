@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SerwerAPI.Models;
 
 namespace SerwerAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class UsersLocationContextModelSnapshot : ModelSnapshot
+    [Migration("20210914080958_seventhMigration")]
+    partial class seventhMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,9 +76,8 @@ namespace SerwerAPI.Migrations
 
             modelBuilder.Entity("SerwerAPI.OldUsersLocationModel", b =>
                 {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("name")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("lastUpdatedTime")
                         .HasColumnType("TEXT");
@@ -87,10 +88,7 @@ namespace SerwerAPI.Migrations
                     b.Property<double>("longtitude")
                         .HasColumnType("REAL");
 
-                    b.Property<string>("name")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
+                    b.HasKey("name");
 
                     b.ToTable("OldUsersData");
                 });

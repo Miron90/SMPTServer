@@ -2,7 +2,6 @@
 using SerwerAPI.Dtos;
 using SerwerAPI.Helpers;
 using SerwerAPI.Models;
-using SerwerAPI.staticMembers;
 using System;
 using System.Collections.Generic;
 using System.IO;

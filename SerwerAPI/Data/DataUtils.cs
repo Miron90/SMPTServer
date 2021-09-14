@@ -21,6 +21,13 @@ namespace SerwerAPI.Data
             {
                 if ((DateTime.Now - model.updatedTime).TotalMinutes > 2)
                 {
+                    _context.OldUsersData.Add(new OldUsersLocationModel()
+                    {
+                        lastUpdatedTime = model.updatedTime,
+                        longtitude = model.longtitude,
+                        latitude = model.latitude,
+                        name = model.name
+                    });
                     _context.Remove(model);
                 }
             }
