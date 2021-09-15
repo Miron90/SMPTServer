@@ -11,5 +11,6 @@ namespace SerwerAPI.Services
         Task<IEnumerable<SignsDto>> GetSigns();
         Task<bool> AddSign(SignUploadDto signDto);
         Task<IEnumerable<SignDataDto>> GetSignsOrderedBy();
+        Task<string> GetSVGSignCode(string signCode);
     }
 }

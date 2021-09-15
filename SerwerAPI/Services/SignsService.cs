@@ -86,5 +86,26 @@ namespace SerwerAPI.Services
             }
             return signsDto;
         }
+
+        public Task<string> GetSVGSignCode(string signCode)
+        {
+            var signSVG = _repo.GetSignByID(signCode);
+            string svg;
+            if (signSVG == null)
+            {
+                svg = _engine.runEngine(signCode).GetCompletionValue().ToString();
+                _repo.AddSignToSignsData(new SignsDataModel
+                {
+                    signCode = signCode,
+                    SVGCode = svg,
+                    count = 1
+                });
+            }
+            else
+            {
+                svg = signSVG.SVGCode;
+            }
+            return Task.Run(() => svg);
+        }
     }
 }

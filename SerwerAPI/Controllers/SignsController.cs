@@ -73,5 +73,20 @@ namespace SerwerAPI.Controllers
 
             return Ok(signsDto);
         }
+        [HttpGet("svg")]
+        public async Task<IActionResult> GetSVGCode(string signCode)
+        {
+            string signSvg;
+            try
+            {
+                signSvg = await _service.GetSVGSignCode(signCode);
+            }
+            catch (Exception e)
+            {
+                return BadRequest("" + e);
+            }
+
+            return Ok(signSvg);
+        }
     }
 }
