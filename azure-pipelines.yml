@@ -33,8 +33,11 @@ jobs:
     inputs:
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
-    
-    
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(PATHTOBUILD)'
+      Contents: '**'
+      TargetFolder: '../release'
 
 
 
