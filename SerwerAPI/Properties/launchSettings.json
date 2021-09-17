@@ -19,14 +19,14 @@
     },
     "SerwerAPI": {
       "commandName": "Project",
-      "commandLineArgs": "--urls http://0.0.0.0:5001",
+      "commandLineArgs": "--urls https://0.0.0.0:5001",
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
       "environmentVariables": {
         "NodeJS": "C:\\Program Files\\nodejs",
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://0.0.0.0:5001"
+      "applicationUrl": "https://0.0.0.0:5001"
     },
     "WSL": {
       "commandName": "WSL2",

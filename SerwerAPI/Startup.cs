@@ -1,4 +1,5 @@
 using Jering.Javascript.NodeJS;
+using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -49,6 +50,38 @@ namespace SerwerAPI
             services.AddScoped<ISignsRepository, SignsRepository>();
             services.AddSwaggerGen();
             services.AddControllers();
+            services.AddTransient<MyCertificateValidationService>();
+            services.AddAuthentication(
+                CertificateAuthenticationDefaults.AuthenticationScheme)
+                .AddCertificate(options =>
+                {
+                    options.AllowedCertificateTypes = CertificateTypes.SelfSigned;
+                    options.Events = new CertificateAuthenticationEvents
+                    {
+                        OnCertificateValidated = context =>
+                        {
+                            var validationService = context.HttpContext.RequestServices.GetService<MyCertificateValidationService>();
+
+                            if (validationService.ValidateCertificate(context.ClientCertificate))
+                            {
+                                context.Success();
+                            }
+                            else
+                            {
+                                //ontext.Success();
+                                context.Fail("invalid cert");
+                            }
+
+                            return Task.CompletedTask;
+                        },
+                        OnAuthenticationFailed = context =>
+                        {
+                            //context.Success();
+                            context.Fail("invalid cert");
+                            return Task.CompletedTask;
+                        }
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,15 +96,17 @@ namespace SerwerAPI
                 });
 
                 app.UseDeveloperExceptionPage();
-            }
+            }/*
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
+            });*/
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
