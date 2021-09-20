@@ -23,7 +23,6 @@ namespace SerwerAPI.Helpers
 
         private void DoWork(object state)
         {
-            Console.WriteLine("xdd");
             _dataUtils.checkOldRecord();
         }
 

@@ -23,11 +23,12 @@ namespace SerwerAPI
             return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-            webBuilder.UseStartup<Startup>();
-            webBuilder.ConfigureKestrel(o =>
-            {
-                o.ConfigureHttpsDefaults(o => o.ClientCertificateMode = ClientCertificateMode.RequireCertificate);
-            });
+                    webBuilder.UseStartup<Startup>();
+
+                    webBuilder.ConfigureKestrel(o =>
+                    {
+                        o.ConfigureHttpsDefaults(o => o.ClientCertificateMode = ClientCertificateMode.RequireCertificate);
+                    });
         });
         }
 

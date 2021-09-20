@@ -68,7 +68,6 @@ namespace SerwerAPI
                             }
                             else
                             {
-                                //ontext.Success();
                                 context.Fail("invalid cert");
                             }
 
@@ -76,7 +75,6 @@ namespace SerwerAPI
                         },
                         OnAuthenticationFailed = context =>
                         {
-                            //context.Success();
                             context.Fail("invalid cert");
                             return Task.CompletedTask;
                         }
