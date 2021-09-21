@@ -41,5 +41,20 @@ namespace SerwerAPI.Controllers
             Console.WriteLine(db.UsersLocation.ToList());
             return db.UsersLocation.ToList();*/
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddZone([FromBody] ZoneAddDto[] zone)
+        {
+            try
+            {
+                await _service.AddZone(zone);
+            }
+            catch (Exception e)
+            {
+                return BadRequest("" + e);
+            }
+
+            return Ok("OK");
+        }
     }
 }

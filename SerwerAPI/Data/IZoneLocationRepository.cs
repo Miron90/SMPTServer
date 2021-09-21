@@ -9,5 +9,7 @@ namespace SerwerAPI.Data
     public interface IZoneLocationRepository
     {
         Task<IEnumerable<ZoneLocationModel>> GetZonesLocations();
+        int GetLastZoneId();
+        Task AddZoneModel(List<ZoneLocationModel> zonesLocationsModel);
     }
 }

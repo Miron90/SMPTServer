@@ -16,6 +16,23 @@ namespace SerwerAPI.Services
         {
             _repo = repo;
         }
+
+        public async Task AddZone(ZoneAddDto[] zone)
+        {
+            var mShapeId = _repo.GetLastZoneId();
+            var zonesLocationsModel = new List<ZoneLocationModel>();
+            foreach (ZoneAddDto dto in zone)
+            {
+                zonesLocationsModel.Add(new ZoneLocationModel
+                {
+                    longitude = dto.mLongitude,
+                    latitude = dto.mLatitude,
+                    shapeId = mShapeId
+                });
+            }
+            await _repo.AddZoneModel(zonesLocationsModel);
+        }
+
         public async Task<IEnumerable<ZoneLocationDto>> GetZonesLocations()
         {
             var zonesLocations = await _repo.GetZonesLocations();

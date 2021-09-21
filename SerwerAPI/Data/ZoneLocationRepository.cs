@@ -14,6 +14,22 @@ namespace SerwerAPI.Data
         {
             _context = context;
         }
+
+        public Task AddZoneModel(List<ZoneLocationModel> zonesLocationsModel)
+        {
+            foreach(ZoneLocationModel model in zonesLocationsModel)
+            {
+                _context.ZoneLocation.Add(model);
+            }
+            
+            return Task.Run(() => _context.SaveChanges());
+        }
+
+        public int GetLastZoneId()
+        {
+            return _context.ZoneLocation.OrderByDescending(zone => zone.shapeId).FirstOrDefault().shapeId + 1;
+        }
+
         public Task<IEnumerable<ZoneLocationModel>> GetZonesLocations()
         {
             return Task.Run(() => _context.ZoneLocation.OrderBy(zone => zone.id).OrderBy(zone => zone.shapeId).ToList().AsEnumerable());

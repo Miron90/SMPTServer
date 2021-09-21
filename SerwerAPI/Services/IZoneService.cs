@@ -10,5 +10,6 @@ namespace SerwerAPI.Services
     {
 
         public Task<IEnumerable<ZoneLocationDto>> GetZonesLocations();
+        Task AddZone(ZoneAddDto[] zone);
     }
 }
