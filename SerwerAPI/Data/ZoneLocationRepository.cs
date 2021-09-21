@@ -27,7 +27,14 @@ namespace SerwerAPI.Data
 
         public int GetLastZoneId()
         {
-            return _context.ZoneLocation.OrderByDescending(zone => zone.shapeId).FirstOrDefault().shapeId + 1;
+            var zone = _context.ZoneLocation.OrderByDescending(zone => zone.shapeId).FirstOrDefault();
+            if (zone == null)
+            {
+                return 1;
+            }
+            else {
+                return zone.shapeId;
+            }
         }
 
         public Task<IEnumerable<ZoneLocationModel>> GetZonesLocations()

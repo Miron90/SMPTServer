@@ -20,6 +20,10 @@ namespace SerwerAPI.Services
         public async Task AddZone(ZoneAddDto[] zone)
         {
             var mShapeId = _repo.GetLastZoneId();
+            if(mShapeId != null)
+            {
+                mShapeId++;
+            } 
             var zonesLocationsModel = new List<ZoneLocationModel>();
             foreach (ZoneAddDto dto in zone)
             {
