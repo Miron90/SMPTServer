@@ -22,7 +22,14 @@ namespace SerwerAPI.Controllers
             try
             {
                 var filePath = "C:\\\\APIDatabase\\warsaw\\4uMaps" + "\\" + zoom + "\\" + x + "\\" + y + ".png";
-                Byte[] b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.         
+                Byte[] b = null;
+                try
+                {
+                    b = System.IO.File.ReadAllBytes(filePath);   // You can use your own method over here.
+                }catch(Exception e)
+                {
+
+                }
                 return File(b, "image/png");
             }
             catch (Exception e)
